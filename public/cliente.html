@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+    <title>WS Client</title>
+
+    <!-- Estilos para os elementos do HTML -->
+    <style>
+        .mensagem-usuario {
+            border: 2px solid darkcyan;
+            border-radius: 0.5em;
+            background-color: lightgreen;
+            margin-bottom: 10px;
+            padding: 3px;
+            float: right;
+            clear: both;
+        }
+        .mensagem-outro {
+            border: 2px solid lightgray;
+            border-radius: 0.5em;
+            background-color: azure;
+            margin-bottom: 10px;
+            padding: 3px;
+            float: left;
+            clear: both;
+        }
+        .nomeSala {
+            padding: 1rem;
+            cursor: pointer;
+            
+            transition: .8s;
+        }
+        .nomeSala:hover {
+            color: rgb(163, 163, 163);
+            
+        }
+        .statusSala {
+            font-weight: 100;
+            padding-left: 1rem;
+        }
+        #salas {
+            text-decoration: none;
+            background-color: rgb(58, 58, 58);
+            color: aliceblue;
+            font-weight: 700;
+            padding: 4rem;
+        }
+
+        #chat {
+            clear: both;
+        }
+
+        .nome-pessoa {
+            font-weight: bold;   
+        }
+    </style>
+
+    <script src="/cliente.js">
+        
+        
+    </script>
+</head>
+<body>
+    
+    <div id="chat">
+        
+    </div>
+    
+        <div >
+            <ul id="salas">
+               
+            </ul>
+        </div>
+    
+    <div id="actions" style="clear: both;">
+        Seu nome: <input type="text" id="username" style="width: 10em" /> <br/>
+        Mensagem: <input type="text" id="message" onkeydown="pressionouTecla(event)" style="width: 20em"/>
+        <button onClick="send()" >
+            Enviar
+        </button>
+    </div>
+</body>
+</html>
